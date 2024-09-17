@@ -4,6 +4,7 @@
 
 package com.easyconference.gestion_conferencias;
 
+import com.easyconference.presentation.GUIcontainer;
 import com.easyconference.presentation.GUIlogin;
 import com.easyconference.presentation.GUIregister;
 
@@ -14,7 +15,7 @@ import com.easyconference.presentation.GUIregister;
 public class Gestion_conferencias {
 
     public static void main(String[] args) {
-        GUIregister inicio = new GUIregister();
+        GUIcontainer inicio = new GUIcontainer();
         inicio.setVisible(true);
     }
 }

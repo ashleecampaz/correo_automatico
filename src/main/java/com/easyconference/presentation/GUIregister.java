@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.easyconference.presentation;
+import java.awt.Dimension;
 import javax.swing.BorderFactory;
 import javax.swing.SpringLayout;
 import javax.swing.border.EmptyBorder;
@@ -41,15 +42,17 @@ public class GUIregister extends javax.swing.JFrame {
         txtConContrasenia = new javax.swing.JTextField();
         cmbPaises = new javax.swing.JComboBox<>();
         txtfOrganizacion = new javax.swing.JTextField();
-        txtfCamposInv = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
         lbYatienesCuenta = new javax.swing.JLabel();
+        sclpCamposInv = new javax.swing.JScrollPane();
+        txtaCamposInv = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(java.awt.Toolkit.getDefaultToolkit().getScreenSize());
         setMinimumSize(new java.awt.Dimension(682, 542));
-        setPreferredSize(new java.awt.Dimension(682, 542));
-        setSize(new java.awt.Dimension(682, 542));
+        setPreferredSize(new java.awt.Dimension(800, 690));
+        setResizable(false);
+        setSize(new java.awt.Dimension(784, 649));
 
         pnlFondo.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -64,6 +67,7 @@ public class GUIregister extends javax.swing.JFrame {
 
         pnlFormulario.setBackground(new java.awt.Color(255, 255, 255));
         pnlFormulario.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semibold", 0, 24), new java.awt.Color(0, 153, 153))); // NOI18N
+        pnlFormulario.setMinimumSize(new java.awt.Dimension(643, 456));
         pnlFormulario.setLayout(new java.awt.GridBagLayout());
 
         txtfNombre.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
@@ -77,9 +81,9 @@ public class GUIregister extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 88;
+        gridBagConstraints.ipadx = 100;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.weightx = 0.4;
+        gridBagConstraints.weightx = 0.8;
         gridBagConstraints.insets = new java.awt.Insets(26, 32, 0, 0);
         pnlFormulario.add(txtfNombre, gridBagConstraints);
 
@@ -89,9 +93,9 @@ public class GUIregister extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 88;
+        gridBagConstraints.ipadx = 100;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.weightx = 0.4;
+        gridBagConstraints.weightx = 0.8;
         gridBagConstraints.insets = new java.awt.Insets(18, 32, 0, 0);
         pnlFormulario.add(txtfApellido, gridBagConstraints);
 
@@ -100,10 +104,11 @@ public class GUIregister extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridheight = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 88;
+        gridBagConstraints.ipadx = 100;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.weightx = 0.4;
+        gridBagConstraints.weightx = 0.8;
         gridBagConstraints.insets = new java.awt.Insets(18, 32, 0, 0);
         pnlFormulario.add(txtfCorreo, gridBagConstraints);
 
@@ -111,11 +116,12 @@ public class GUIregister extends javax.swing.JFrame {
         txtfContrasenia.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "*Contraseña", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 0, 12))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridheight = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 88;
+        gridBagConstraints.ipadx = 100;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.weightx = 0.4;
+        gridBagConstraints.weightx = 0.8;
         gridBagConstraints.insets = new java.awt.Insets(18, 32, 0, 0);
         pnlFormulario.add(txtfContrasenia, gridBagConstraints);
 
@@ -123,11 +129,11 @@ public class GUIregister extends javax.swing.JFrame {
         txtConContrasenia.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "*Confirmar contraseña", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 0, 12))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 88;
+        gridBagConstraints.ipadx = 100;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.weightx = 0.4;
+        gridBagConstraints.weightx = 0.8;
         gridBagConstraints.insets = new java.awt.Insets(18, 32, 0, 0);
         pnlFormulario.add(txtConContrasenia, gridBagConstraints);
 
@@ -142,7 +148,8 @@ public class GUIregister extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 47;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.weightx = 0.4;
         gridBagConstraints.insets = new java.awt.Insets(29, 34, 3, 22);
         pnlFormulario.add(cmbPaises, gridBagConstraints);
 
@@ -154,31 +161,17 @@ public class GUIregister extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 151;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
-        gridBagConstraints.insets = new java.awt.Insets(18, 32, 0, 0);
-        pnlFormulario.add(txtfOrganizacion, gridBagConstraints);
-
-        txtfCamposInv.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        txtfCamposInv.setText("example: ");
-        txtfCamposInv.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "*Campos de investigacion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 0, 12))); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 151;
-        gridBagConstraints.ipady = 131;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.weightx = 0.4;
         gridBagConstraints.insets = new java.awt.Insets(18, 32, 0, 0);
-        pnlFormulario.add(txtfCamposInv, gridBagConstraints);
+        pnlFormulario.add(txtfOrganizacion, gridBagConstraints);
 
         btnRegistrar.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         btnRegistrar.setText("Registrar");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(21, 66, 20, 16);
@@ -198,11 +191,28 @@ public class GUIregister extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridy = 10;
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(24, 32, 0, 0);
         pnlFormulario.add(lbYatienesCuenta, gridBagConstraints);
+
+        txtaCamposInv.setColumns(20);
+        txtaCamposInv.setLineWrap(true);
+        txtaCamposInv.setRows(5);
+        txtaCamposInv.setWrapStyleWord(true);
+        txtaCamposInv.setBorder(javax.swing.BorderFactory.createTitledBorder("*Campos de investigacion"));
+        sclpCamposInv.setViewportView(txtaCamposInv);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(28, 34, 28, 34);
+        pnlFormulario.add(sclpCamposInv, gridBagConstraints);
 
         javax.swing.GroupLayout pnlFondoLayout = new javax.swing.GroupLayout(pnlFondo);
         pnlFondo.setLayout(pnlFondoLayout);
@@ -211,22 +221,24 @@ public class GUIregister extends javax.swing.JFrame {
             .addComponent(pnlSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlFondoLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
-                .addComponent(pnlFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, 643, Short.MAX_VALUE)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addComponent(pnlFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         pnlFondoLayout.setVerticalGroup(
             pnlFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlFondoLayout.createSequentialGroup()
                 .addComponent(pnlSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(pnlFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
+                .addComponent(pnlFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(109, Short.MAX_VALUE))
         );
 
         getContentPane().add(pnlSuperior, java.awt.BorderLayout.NORTH);
 
         SpringLayout centrador = new SpringLayout();
-        centrador.putConstraint(SpringLayout.HORIZONTAL_CENTER, pnlFormulario, 0, SpringLayout.HORIZONTAL_CENTER, pnlFondo);
+        centrador.putConstraint(SpringLayout.VERTICAL_CENTER, pnlFormulario, 20, SpringLayout.VERTICAL_CENTER, pnlFondo);
+        centrador.putConstraint(SpringLayout.WEST, pnlFormulario, 50, SpringLayout.WEST, pnlFondo);
+        //centrador.putConstraint(SpringLayout.WIDTH, pnlFormulario, 0, SpringLayout.WIDTH, pnlFondo);
         pnlFondo.setLayout(centrador);
 
         getContentPane().add(pnlFondo, java.awt.BorderLayout.CENTER);
@@ -291,9 +303,10 @@ public class GUIregister extends javax.swing.JFrame {
     private javax.swing.JPanel pnlFondo;
     private javax.swing.JPanel pnlFormulario;
     private javax.swing.JPanel pnlSuperior;
+    private javax.swing.JScrollPane sclpCamposInv;
     private javax.swing.JTextField txtConContrasenia;
+    private javax.swing.JTextArea txtaCamposInv;
     private javax.swing.JTextField txtfApellido;
-    private javax.swing.JTextField txtfCamposInv;
     private javax.swing.JTextField txtfContrasenia;
     private javax.swing.JTextField txtfCorreo;
     private javax.swing.JTextField txtfNombre;
