@@ -4,6 +4,9 @@
  */
 package com.easyconference.presentation;
 
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
@@ -32,8 +35,6 @@ public class GUIcontainer extends javax.swing.JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
 
         pnlFondo = new javax.swing.JPanel();
-        pnlSuperior = new javax.swing.JPanel();
-        lbeasyConference = new javax.swing.JLabel();
         dskpaneContenedor = new javax.swing.JDesktopPane();
         intfInicio = new javax.swing.JInternalFrame();
         lbBienvenido = new javax.swing.JLabel();
@@ -44,23 +45,20 @@ public class GUIcontainer extends javax.swing.JFrame {
         lbListadoAr = new javax.swing.JLabel();
         pnlBotonCrearCon = new javax.swing.JPanel();
         lbCrearCon = new javax.swing.JLabel();
+        lbBtnBuscar = new javax.swing.JLabel();
+        pnlSuperior = new javax.swing.JPanel();
+        lbeasyConference = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1000, 650));
-        setPreferredSize(new java.awt.Dimension(1000, 650));
-        setSize(new java.awt.Dimension(1000, 650));
+        setMinimumSize(new java.awt.Dimension(873, 650));
+        setResizable(false);
+        setSize(new java.awt.Dimension(873, 650));
 
         pnlFondo.setMinimumSize(new java.awt.Dimension(873, 650));
         pnlFondo.setPreferredSize(new java.awt.Dimension(873, 650));
+        pnlFondo.setLayout(new java.awt.BorderLayout());
 
-        pnlSuperior.setBackground(new java.awt.Color(0, 153, 153));
-        pnlSuperior.setPreferredSize(new java.awt.Dimension(1028, 52));
-        pnlSuperior.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 5, 15));
-
-        lbeasyConference.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
-        lbeasyConference.setForeground(new java.awt.Color(255, 255, 255));
-        lbeasyConference.setText("easyConference");
-        pnlSuperior.add(lbeasyConference);
+        dskpaneContenedor.setSelectedFrame(intfInicio);
 
         intfInicio.setBackground(new java.awt.Color(255, 255, 255));
         intfInicio.setBorder(null);
@@ -68,6 +66,11 @@ public class GUIcontainer extends javax.swing.JFrame {
         intfInicio.setMinimumSize(new java.awt.Dimension(873, 650));
         intfInicio.setPreferredSize(new java.awt.Dimension(873, 650));
         intfInicio.setVisible(true);
+        try {
+            intfInicio.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(GUIcontainer.class.getName()).log(Level.SEVERE, null, ex);
+        }
         intfInicio.getContentPane().setLayout(new java.awt.GridBagLayout());
 
         lbBienvenido.setFont(new java.awt.Font("Segoe UI Semilight", 1, 24)); // NOI18N
@@ -75,11 +78,11 @@ public class GUIcontainer extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridwidth = 5;
         gridBagConstraints.ipadx = 479;
         gridBagConstraints.ipady = -1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 32, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(95, 56, 0, 0);
         intfInicio.getContentPane().add(lbBienvenido, gridBagConstraints);
 
         txtfBusqueda.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
@@ -87,9 +90,11 @@ public class GUIcontainer extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 373;
-        gridBagConstraints.insets = new java.awt.Insets(51, 136, 0, 0);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(51, 267, 0, 0);
         intfInicio.getContentPane().add(txtfBusqueda, gridBagConstraints);
 
         pnlListadoCon.setBackground(new java.awt.Color(236, 236, 236));
@@ -104,12 +109,12 @@ public class GUIcontainer extends javax.swing.JFrame {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 136;
         gridBagConstraints.ipady = 204;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(24, 22, 20, 0);
+        gridBagConstraints.insets = new java.awt.Insets(24, 46, 98, 0);
         intfInicio.getContentPane().add(pnlListadoCon, gridBagConstraints);
 
         pnlListadoAr.setBackground(new java.awt.Color(236, 236, 236));
@@ -124,12 +129,12 @@ public class GUIcontainer extends javax.swing.JFrame {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 136;
         gridBagConstraints.ipady = 204;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(24, 22, 20, 0);
+        gridBagConstraints.insets = new java.awt.Insets(24, 22, 98, 0);
         intfInicio.getContentPane().add(pnlListadoAr, gridBagConstraints);
 
         pnlBotonCrearCon.setBackground(new java.awt.Color(129, 218, 199));
@@ -155,13 +160,21 @@ public class GUIcontainer extends javax.swing.JFrame {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 6;
         gridBagConstraints.ipadx = 83;
         gridBagConstraints.ipady = 72;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(27, 18, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(27, 18, 0, 61);
         intfInicio.getContentPane().add(pnlBotonCrearCon, gridBagConstraints);
+
+        lbBtnBuscar.setText("buscar");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(57, 6, 0, 0);
+        intfInicio.getContentPane().add(lbBtnBuscar, gridBagConstraints);
 
         dskpaneContenedor.setLayer(intfInicio, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -169,45 +182,44 @@ public class GUIcontainer extends javax.swing.JFrame {
         dskpaneContenedor.setLayout(dskpaneContenedorLayout);
         dskpaneContenedorLayout.setHorizontalGroup(
             dskpaneContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 873, Short.MAX_VALUE)
-            .addGroup(dskpaneContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(intfInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(intfInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         dskpaneContenedorLayout.setVerticalGroup(
             dskpaneContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 653, Short.MAX_VALUE)
-            .addGroup(dskpaneContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(dskpaneContenedorLayout.createSequentialGroup()
-                    .addGap(3, 3, 3)
-                    .addComponent(intfInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(3, 3, 3)))
+            .addComponent(intfInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 575, Short.MAX_VALUE)
         );
 
-        getContentPane().add(intfInicio, java.awt.BorderLayout.CENTER);
+        //getContentPane().add(intfInicio, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout pnlFondoLayout = new javax.swing.GroupLayout(pnlFondo);
-        pnlFondo.setLayout(pnlFondoLayout);
-        pnlFondoLayout.setHorizontalGroup(
-            pnlFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, 873, Short.MAX_VALUE)
-            .addGroup(pnlFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(dskpaneContenedor, javax.swing.GroupLayout.Alignment.TRAILING))
+        pnlFondo.add(dskpaneContenedor, java.awt.BorderLayout.CENTER);
+        //getContentPane().add(dskpaneContenedor, java.awt.BorderLayout.CENTER);
+
+        pnlSuperior.setBackground(new java.awt.Color(0, 153, 153));
+        pnlSuperior.setPreferredSize(new java.awt.Dimension(1028, 52));
+        pnlSuperior.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 5, 20));
+
+        lbeasyConference.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
+        lbeasyConference.setForeground(new java.awt.Color(255, 255, 255));
+        lbeasyConference.setText("easyConference");
+        pnlSuperior.add(lbeasyConference);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
-        pnlFondoLayout.setVerticalGroup(
-            pnlFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlFondoLayout.createSequentialGroup()
-                .addComponent(pnlSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(583, Short.MAX_VALUE))
-            .addGroup(pnlFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFondoLayout.createSequentialGroup()
-                    .addGap(0, 65, Short.MAX_VALUE)
-                    .addComponent(dskpaneContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnlSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(pnlSuperior, java.awt.BorderLayout.NORTH);
-        getContentPane().add(dskpaneContenedor, java.awt.BorderLayout.CENTER);
-
-        getContentPane().add(pnlFondo, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -224,10 +236,18 @@ public class GUIcontainer extends javax.swing.JFrame {
 
     private void lbCrearConMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbCrearConMouseClicked
         GUIcreateConference crearConferencia = new GUIcreateConference();
-        
-        dskpaneContenedor.add(crearConferencia, java.awt.BorderLayout.CENTER);
+        GUIcreateArticle crearAriticulo = new GUIcreateArticle();
+        try {
+            //crearConferencia.setMaximum(true);
+            crearAriticulo.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(GUIcontainer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        dskpaneContenedor.add(crearAriticulo, java.awt.BorderLayout.CENTER);
+        //dskpaneContenedor.add(crearConferencia, java.awt.BorderLayout.CENTER);
         intfInicio.setVisible(false);
-        crearConferencia.setVisible(true);
+        crearAriticulo.setVisible(true);
+        //crearConferencia.setVisible(true);
         
     }//GEN-LAST:event_lbCrearConMouseClicked
 
@@ -270,6 +290,7 @@ public class GUIcontainer extends javax.swing.JFrame {
     private javax.swing.JDesktopPane dskpaneContenedor;
     private javax.swing.JInternalFrame intfInicio;
     private javax.swing.JLabel lbBienvenido;
+    private javax.swing.JLabel lbBtnBuscar;
     private javax.swing.JLabel lbCrearCon;
     private javax.swing.JLabel lbListadoAr;
     private javax.swing.JLabel lbListadoCon;

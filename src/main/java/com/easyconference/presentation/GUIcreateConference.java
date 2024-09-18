@@ -41,7 +41,7 @@ public class GUIcreateConference extends javax.swing.JInternalFrame {
         lbMaxArtAcep = new javax.swing.JLabel();
         lbEvaArt = new javax.swing.JLabel();
         pnlCrearCon = new javax.swing.JLabel();
-        pnlInferior1 = new javax.swing.JPanel();
+        pnlSuperior = new javax.swing.JPanel();
         pnlInfoGeneral = new javax.swing.JPanel();
         txtfNombre = new javax.swing.JTextField();
         txtfTemas = new javax.swing.JTextField();
@@ -60,7 +60,6 @@ public class GUIcreateConference extends javax.swing.JInternalFrame {
 
         setBackground(new java.awt.Color(229, 229, 229));
         setBorder(null);
-        setResizable(true);
         setToolTipText("");
         setFrameIcon(null);
         setMinimumSize(new java.awt.Dimension(873, 650));
@@ -214,11 +213,11 @@ public class GUIcreateConference extends javax.swing.JInternalFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(20, 80, 0, 0);
         getContentPane().add(pnlCrearCon, gridBagConstraints);
 
-        pnlInferior1.setBackground(new java.awt.Color(255, 255, 255));
+        pnlSuperior.setBackground(new java.awt.Color(255, 255, 255));
 
         pnlInfoGeneral.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -340,22 +339,22 @@ public class GUIcreateConference extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout pnlInferior1Layout = new javax.swing.GroupLayout(pnlInferior1);
-        pnlInferior1.setLayout(pnlInferior1Layout);
-        pnlInferior1Layout.setHorizontalGroup(
-            pnlInferior1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlInferior1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout pnlSuperiorLayout = new javax.swing.GroupLayout(pnlSuperior);
+        pnlSuperior.setLayout(pnlSuperiorLayout);
+        pnlSuperiorLayout.setHorizontalGroup(
+            pnlSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSuperiorLayout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(pnlInfoGeneral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pnlUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
-        pnlInferior1Layout.setVerticalGroup(
-            pnlInferior1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlInferior1Layout.createSequentialGroup()
+        pnlSuperiorLayout.setVerticalGroup(
+            pnlSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSuperiorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlInferior1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnlUbicacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pnlInfoGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -369,7 +368,7 @@ public class GUIcreateConference extends javax.swing.JInternalFrame {
         gridBagConstraints.ipady = 9;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(18, 80, 0, 50);
-        getContentPane().add(pnlInferior1, gridBagConstraints);
+        getContentPane().add(pnlSuperior, gridBagConstraints);
 
         pnlBotonGuardar.setBackground(new java.awt.Color(255, 255, 255));
         pnlBotonGuardar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -407,7 +406,7 @@ public class GUIcreateConference extends javax.swing.JInternalFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.ipadx = 24;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(30, 488, 21, 50);
+        gridBagConstraints.insets = new java.awt.Insets(16, 488, 7, 50);
         getContentPane().add(pnlBotonGuardar, gridBagConstraints);
 
         pack();
@@ -435,9 +434,9 @@ public class GUIcreateConference extends javax.swing.JInternalFrame {
     private javax.swing.JLabel pnlCrearCon;
     private javax.swing.JPanel pnlEvArticulos;
     private javax.swing.JPanel pnlInferior;
-    private javax.swing.JPanel pnlInferior1;
     private javax.swing.JPanel pnlInfoGeneral;
     private javax.swing.JPanel pnlRepArticulos;
+    private javax.swing.JPanel pnlSuperior;
     private javax.swing.JPanel pnlUbicacion;
     private javax.swing.JTextField txtfCiudad;
     private javax.swing.JTextField txtfDireccion;

@@ -41,6 +41,7 @@ public class GUIlogin extends javax.swing.JFrame {
         pswfContrasenia = new javax.swing.JPasswordField();
         lbInicio_sesion = new javax.swing.JLabel();
         btnIngresar = new javax.swing.JButton();
+        lbbtnVizualizar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -110,12 +111,24 @@ public class GUIlogin extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridwidth = 71;
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         gridBagConstraints.ipadx = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         gridBagConstraints.insets = new java.awt.Insets(15, 0, 15, 0);
         pnlInicio.add(btnIngresar, gridBagConstraints);
+
+        lbbtnVizualizar.setText("visualizar");
+        lbbtnVizualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbbtnVizualizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbbtnVizualizarMouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 70;
+        gridBagConstraints.gridy = 2;
+        pnlInicio.add(lbbtnVizualizar, gridBagConstraints);
 
         SpringLayout centrador = new SpringLayout();
         centrador.putConstraint(SpringLayout.HORIZONTAL_CENTER, pnlInicio, 0, SpringLayout.HORIZONTAL_CENTER, pnlFondo);
@@ -149,6 +162,15 @@ public class GUIlogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lbbtnVizualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbbtnVizualizarMouseClicked
+       if(pswfContrasenia.getEchoChar()==0){
+           pswfContrasenia.setEchoChar('•');
+       } 
+      else{
+        pswfContrasenia.setEchoChar((char)0);
+       }
+    }//GEN-LAST:event_lbbtnVizualizarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -192,6 +214,7 @@ public class GUIlogin extends javax.swing.JFrame {
     private javax.swing.JButton btnIngresar;
     private javax.swing.JLabel lbEasyConference;
     private javax.swing.JLabel lbInicio_sesion;
+    private javax.swing.JLabel lbbtnVizualizar;
     private javax.swing.JPanel pnlFondo;
     private javax.swing.JPanel pnlInicio;
     private javax.swing.JPanel pnlSuperior;
