@@ -42,6 +42,7 @@ public class GUIlogin extends javax.swing.JFrame {
         lbInicio_sesion = new javax.swing.JLabel();
         btnIngresar = new javax.swing.JButton();
         lbbtnVizualizar = new javax.swing.JLabel();
+        lbNotienesCuenta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -109,13 +110,13 @@ public class GUIlogin extends javax.swing.JFrame {
         btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnIngresar.setFocusPainted(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 71;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 70;
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         gridBagConstraints.ipadx = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        gridBagConstraints.insets = new java.awt.Insets(15, 0, 15, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 4, 5, 0);
         pnlInicio.add(btnIngresar, gridBagConstraints);
 
         lbbtnVizualizar.setText("visualizar");
@@ -129,6 +130,30 @@ public class GUIlogin extends javax.swing.JFrame {
         gridBagConstraints.gridx = 70;
         gridBagConstraints.gridy = 2;
         pnlInicio.add(lbbtnVizualizar, gridBagConstraints);
+
+        lbNotienesCuenta.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
+        lbNotienesCuenta.setForeground(new java.awt.Color(0, 102, 102));
+        lbNotienesCuenta.setText("¿No tienes cuenta?Da clic aquí");
+        lbNotienesCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbNotienesCuenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbNotienesCuentaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbNotienesCuentaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lbNotienesCuentaMouseExited(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 70;
+        gridBagConstraints.ipadx = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 13, 0);
+        pnlInicio.add(lbNotienesCuenta, gridBagConstraints);
 
         SpringLayout centrador = new SpringLayout();
         centrador.putConstraint(SpringLayout.HORIZONTAL_CENTER, pnlInicio, 0, SpringLayout.HORIZONTAL_CENTER, pnlFondo);
@@ -172,6 +197,20 @@ public class GUIlogin extends javax.swing.JFrame {
        }
     }//GEN-LAST:event_lbbtnVizualizarMouseClicked
 
+    private void lbNotienesCuentaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbNotienesCuentaMouseEntered
+       lbNotienesCuenta.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14));
+    }//GEN-LAST:event_lbNotienesCuentaMouseEntered
+
+    private void lbNotienesCuentaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbNotienesCuentaMouseExited
+       lbNotienesCuenta.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14));
+    }//GEN-LAST:event_lbNotienesCuentaMouseExited
+
+    private void lbNotienesCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbNotienesCuentaMouseClicked
+        this.dispose();
+        GUIregister registro = new GUIregister();
+        registro.setVisible(true);
+    }//GEN-LAST:event_lbNotienesCuentaMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -214,6 +253,7 @@ public class GUIlogin extends javax.swing.JFrame {
     private javax.swing.JButton btnIngresar;
     private javax.swing.JLabel lbEasyConference;
     private javax.swing.JLabel lbInicio_sesion;
+    private javax.swing.JLabel lbNotienesCuenta;
     private javax.swing.JLabel lbbtnVizualizar;
     private javax.swing.JPanel pnlFondo;
     private javax.swing.JPanel pnlInicio;

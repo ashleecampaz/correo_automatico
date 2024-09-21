@@ -15,9 +15,12 @@ import com.easyconference.presentation.GUIregister;
 public class Gestion_conferencias {
 
     public static void main(String[] args) {
-        //GUIlogin init = new GUIlogin();
-        //init.setVisible(true);
-        GUIcontainer inicio = new GUIcontainer();
-        inicio.setVisible(true);
+        GUIlogin login = new GUIlogin();
+        login.setLocationRelativeTo(null);
+        login.setVisible(true);
+        
+        //Contedor de inicio despues de iniciar sesion
+        //GUIcontainer inicio = new GUIcontainer();
+        //inicio.setVisible(true);
     }
 }

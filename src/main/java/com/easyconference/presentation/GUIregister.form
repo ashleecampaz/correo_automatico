@@ -12,7 +12,6 @@
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[800, 690]"/>
     </Property>
-    <Property name="resizable" type="boolean" value="false"/>
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[784, 649]"/>
     </Property>
@@ -43,7 +42,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_LayoutCodePost" type="java.lang.String" value="SpringLayout centrador = new SpringLayout();&#xa;centrador.putConstraint(SpringLayout.VERTICAL_CENTER, pnlFormulario, 20, SpringLayout.VERTICAL_CENTER, pnlFondo);&#xa;centrador.putConstraint(SpringLayout.WEST, pnlFormulario, 50, SpringLayout.WEST, pnlFondo);&#xa;//centrador.putConstraint(SpringLayout.WIDTH, pnlFormulario, 0, SpringLayout.WIDTH, pnlFondo);&#xa;pnlFondo.setLayout(centrador);"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="SpringLayout centrador = new SpringLayout();&#xa;centrador.putConstraint(SpringLayout.VERTICAL_CENTER, pnlFormulario, 20, SpringLayout.VERTICAL_CENTER, pnlFondo);&#xa;centrador.putConstraint(SpringLayout.HORIZONTAL_CENTER, pnlFormulario, 20, SpringLayout.HORIZONTAL_CENTER, pnlFondo);&#xa;centrador.putConstraint(SpringLayout.WIDTH, pnlFormulario, 20, SpringLayout.HEIGHT, pnlFondo);&#xa;pnlFondo.setLayout(centrador);"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
@@ -270,6 +269,7 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbYatienesCuentaMouseClicked"/>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbYatienesCuentaMouseEntered"/>
                 <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbYatienesCuentaMouseExited"/>
               </Events>

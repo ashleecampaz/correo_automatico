@@ -51,7 +51,6 @@ public class GUIregister extends javax.swing.JFrame {
         setMaximumSize(java.awt.Toolkit.getDefaultToolkit().getScreenSize());
         setMinimumSize(new java.awt.Dimension(682, 542));
         setPreferredSize(new java.awt.Dimension(800, 690));
-        setResizable(false);
         setSize(new java.awt.Dimension(784, 649));
 
         pnlFondo.setBackground(new java.awt.Color(255, 255, 255));
@@ -166,6 +165,9 @@ public class GUIregister extends javax.swing.JFrame {
         lbYatienesCuenta.setText("¿Ya tienes cuenta? De clic aquí");
         lbYatienesCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lbYatienesCuenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbYatienesCuentaMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lbYatienesCuentaMouseEntered(evt);
             }
@@ -236,13 +238,12 @@ public class GUIregister extends javax.swing.JFrame {
 
         getContentPane().add(pnlSuperior, java.awt.BorderLayout.NORTH);
 
+        getContentPane().add(pnlFondo, java.awt.BorderLayout.CENTER);
         SpringLayout centrador = new SpringLayout();
         centrador.putConstraint(SpringLayout.VERTICAL_CENTER, pnlFormulario, 20, SpringLayout.VERTICAL_CENTER, pnlFondo);
-        centrador.putConstraint(SpringLayout.WEST, pnlFormulario, 50, SpringLayout.WEST, pnlFondo);
-        //centrador.putConstraint(SpringLayout.WIDTH, pnlFormulario, 0, SpringLayout.WIDTH, pnlFondo);
+        centrador.putConstraint(SpringLayout.HORIZONTAL_CENTER, pnlFormulario, 20, SpringLayout.HORIZONTAL_CENTER, pnlFondo);
+        centrador.putConstraint(SpringLayout.WIDTH, pnlFormulario, 20, SpringLayout.HEIGHT, pnlFondo);
         pnlFondo.setLayout(centrador);
-
-        getContentPane().add(pnlFondo, java.awt.BorderLayout.CENTER);
 
         pack();
         setLocationRelativeTo(null);
@@ -263,6 +264,13 @@ public class GUIregister extends javax.swing.JFrame {
     private void txtfNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfNombreActionPerformed
+
+    private void lbYatienesCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbYatienesCuentaMouseClicked
+        this.dispose();
+        GUIlogin login = new GUIlogin();
+        login.setLocationRelativeTo(null);
+        login.setVisible(true);
+    }//GEN-LAST:event_lbYatienesCuentaMouseClicked
 
     /**
      * @param args the command line arguments
