@@ -1,18 +1,21 @@
 package com.easyconference.access;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import com.easyconference.gestion_conferencias.Gestion_conferencias;
 import com.easyconference.domain.service.IConferenceService;
 
-
-public class RConferenciaMemoriaArrayList implements IConferenceService{
-
-    private ArrayList<Gestion_conferencias> listaConferencias;
+/**
+ *
+ * @author HSVSTT2
+ */
+public class ConferenciaLinkedListRepository implements IConferenceService
+{
+    private LinkedList<Gestion_conferencias> listaConferencias;
     
-    public RConferenciaMemoriaArrayList()
+    public ConferenciaLinkedListRepository()
     {
-        this.listaConferencias= new ArrayList();
+        this.listaConferencias= new LinkedList();
     }
     
     @Override
@@ -25,5 +28,4 @@ public class RConferenciaMemoriaArrayList implements IConferenceService{
     public List<Gestion_conferencias> listarConferencias() {
         return this.listaConferencias;
     }
-    
 }
