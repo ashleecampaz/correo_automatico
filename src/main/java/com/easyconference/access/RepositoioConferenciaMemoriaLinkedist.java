@@ -1,14 +1,15 @@
-package com.easyconference.accesoADatos;
+package com.easyconference.access;
 
 import java.util.LinkedList;
 import java.util.List;
 import com.easyconference.gestion_conferencias.Gestion_conferencias;
+import com.easyconference.domain.service.IConferenceService;
 
 /**
  *
  * @author HSVSTT2
  */
-public class RepositoioConferenciaMemoriaLinkedist implements InterfaceRepositorioConferencia
+public class RepositoioConferenciaMemoriaLinkedist implements IConferenceService
 {
     private LinkedList<Gestion_conferencias> listaConferencias;
     

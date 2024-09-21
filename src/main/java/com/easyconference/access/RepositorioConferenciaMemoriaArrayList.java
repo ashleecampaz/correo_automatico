@@ -1,11 +1,12 @@
-package com.easyconference.accesoADatos;
+package com.easyconference.access;
 
 import java.util.ArrayList;
 import java.util.List;
 import com.easyconference.gestion_conferencias.Gestion_conferencias;
+import com.easyconference.domain.service.IConferenceService;
 
 
-public class RepositorioConferenciaMemoriaArrayList implements InterfaceRepositorioConferencia{
+public class RepositorioConferenciaMemoriaArrayList implements IConferenceService{
 
     private ArrayList<Gestion_conferencias> listaConferencias;
     

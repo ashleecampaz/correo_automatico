@@ -1,15 +1,15 @@
-package com.easyconference.controladores;
+package com.easyconference.domain.service;
 import java.util.List;
-import com.easyconference.accesoADatos.InterfaceRepositorioConferencia;
 import com.easyconference.gestion_conferencias.Gestion_conferencias;
+import com.easyconference.domain.service.IConferenceService;
 
 
-public class ServicioAlmacenamientoConferencias {
+public class ConferenceService {
     
-    private InterfaceRepositorioConferencia referenciaRepositorioConferencias;
+    private IConferenceService referenciaRepositorioConferencias;
     
     //puedo enviar objetos que pertenecen a clases que implementan la interface
-    public ServicioAlmacenamientoConferencias(InterfaceRepositorioConferencia referenciaRepositorioConferencias)
+    public ConferenceService(IConferenceService referenciaRepositorioConferencias)
     {
         this.referenciaRepositorioConferencias=referenciaRepositorioConferencias;
     }
