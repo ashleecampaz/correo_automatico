@@ -1,29 +1,28 @@
 package com.easyconference.access;
 
+import com.easyconference.domain.entities.Conference;
 import java.util.ArrayList;
 import java.util.List;
-import com.easyconference.gestion_conferencias.Gestion_conferencias;
-import com.easyconference.domain.service.IConferenceService;
 
 
-public class ConferenciaArrayListRepository implements IConferenceService{
+public class ConferenciaArrayListRepository implements IConferenceRepository{
 
-    private ArrayList<Gestion_conferencias> listaConferencias;
+    private ArrayList<Conference> listConference;
     
     public ConferenciaArrayListRepository()
     {
-        this.listaConferencias= new ArrayList();
+        this.listConference= new ArrayList();
     }
-    
+
     @Override
-    public boolean almacenarConferencia(Gestion_conferencias objConfererencia) {
-        boolean bandera=this.listaConferencias.add(objConfererencia);
+    public boolean storeConference(Conference objConference) {
+        boolean bandera=this.listConference.add(objConference);
         return bandera;
     }
 
     @Override
-    public List<Gestion_conferencias> listarConferencias() {
-        return this.listaConferencias;
+    public List<Conference> listConference() {
+        return this.listConference;
     }
     
 }
