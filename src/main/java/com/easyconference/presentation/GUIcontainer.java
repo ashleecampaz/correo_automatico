@@ -51,7 +51,6 @@ public class GUIcontainer extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(873, 650));
-        setResizable(false);
         setSize(new java.awt.Dimension(873, 650));
 
         pnlFondo.setMinimumSize(new java.awt.Dimension(873, 650));
@@ -59,6 +58,7 @@ public class GUIcontainer extends javax.swing.JFrame {
         pnlFondo.setLayout(new java.awt.BorderLayout());
 
         dskpaneContenedor.setSelectedFrame(intfInicio);
+        dskpaneContenedor.setLayout(new java.awt.BorderLayout());
 
         intfInicio.setBackground(new java.awt.Color(255, 255, 255));
         intfInicio.setBorder(null);
@@ -176,23 +176,13 @@ public class GUIcontainer extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(57, 6, 0, 0);
         intfInicio.getContentPane().add(lbBtnBuscar, gridBagConstraints);
 
-        dskpaneContenedor.setLayer(intfInicio, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout dskpaneContenedorLayout = new javax.swing.GroupLayout(dskpaneContenedor);
-        dskpaneContenedor.setLayout(dskpaneContenedorLayout);
-        dskpaneContenedorLayout.setHorizontalGroup(
-            dskpaneContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(intfInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        dskpaneContenedorLayout.setVerticalGroup(
-            dskpaneContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(intfInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 575, Short.MAX_VALUE)
-        );
-
+        dskpaneContenedor.add(intfInicio, java.awt.BorderLayout.CENTER);
         //getContentPane().add(intfInicio, java.awt.BorderLayout.CENTER);
 
         pnlFondo.add(dskpaneContenedor, java.awt.BorderLayout.CENTER);
         //getContentPane().add(dskpaneContenedor, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(pnlFondo, java.awt.BorderLayout.CENTER);
 
         pnlSuperior.setBackground(new java.awt.Color(0, 153, 153));
         pnlSuperior.setPreferredSize(new java.awt.Dimension(1028, 52));
@@ -203,22 +193,7 @@ public class GUIcontainer extends javax.swing.JFrame {
         lbeasyConference.setText("easyConference");
         pnlSuperior.add(lbeasyConference);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(pnlSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlSuperior, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
+        getContentPane().add(pnlSuperior, java.awt.BorderLayout.PAGE_START);
         getContentPane().add(pnlSuperior, java.awt.BorderLayout.NORTH);
 
         pack();

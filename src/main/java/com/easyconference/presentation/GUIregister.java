@@ -35,17 +35,17 @@ public class GUIregister extends javax.swing.JFrame {
         pnlSuperior = new javax.swing.JPanel();
         lbEasyConference = new javax.swing.JLabel();
         pnlFormulario = new javax.swing.JPanel();
-        txtfNombre = new javax.swing.JTextField();
+        txtfPais = new javax.swing.JTextField();
         txtfApellido = new javax.swing.JTextField();
         txtfCorreo = new javax.swing.JTextField();
         txtfContrasenia = new javax.swing.JTextField();
         txtConContrasenia = new javax.swing.JTextField();
-        cmbPaises = new javax.swing.JComboBox<>();
         txtfOrganizacion = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
         lbYatienesCuenta = new javax.swing.JLabel();
         sclpCamposInv = new javax.swing.JScrollPane();
         txtaCamposInv = new javax.swing.JTextArea();
+        txtfNombre = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(java.awt.Toolkit.getDefaultToolkit().getScreenSize());
@@ -70,22 +70,22 @@ public class GUIregister extends javax.swing.JFrame {
         pnlFormulario.setMinimumSize(new java.awt.Dimension(643, 456));
         pnlFormulario.setLayout(new java.awt.GridBagLayout());
 
-        txtfNombre.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        txtfNombre.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "*Nombre", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 0, 12))); // NOI18N
-        txtfNombre.addActionListener(new java.awt.event.ActionListener() {
+        txtfPais.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
+        txtfPais.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "*Pais", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 0, 12))); // NOI18N
+        txtfPais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtfNombreActionPerformed(evt);
+                txtfPaisActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 100;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.weightx = 0.8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.BELOW_BASELINE;
         gridBagConstraints.insets = new java.awt.Insets(26, 32, 0, 0);
-        pnlFormulario.add(txtfNombre, gridBagConstraints);
+        pnlFormulario.add(txtfPais, gridBagConstraints);
 
         txtfApellido.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         txtfApellido.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "*Apellido", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 0, 12))); // NOI18N
@@ -137,22 +137,6 @@ public class GUIregister extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(18, 32, 0, 0);
         pnlFormulario.add(txtConContrasenia, gridBagConstraints);
 
-        cmbPaises.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
-        cmbPaises.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cmbPaises.setToolTipText("");
-        cmbPaises.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "*Pais", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 0, 12))); // NOI18N
-        cmbPaises.setVerifyInputWhenFocusTarget(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 47;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.weightx = 0.4;
-        gridBagConstraints.insets = new java.awt.Insets(29, 34, 3, 22);
-        pnlFormulario.add(cmbPaises, gridBagConstraints);
-
         txtfOrganizacion.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         txtfOrganizacion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "*Organizacion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 0, 12))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -201,7 +185,7 @@ public class GUIregister extends javax.swing.JFrame {
         txtaCamposInv.setLineWrap(true);
         txtaCamposInv.setRows(5);
         txtaCamposInv.setWrapStyleWord(true);
-        txtaCamposInv.setBorder(javax.swing.BorderFactory.createTitledBorder("*Campos de investigacion"));
+        txtaCamposInv.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), "*Campos de investigacion"));
         sclpCamposInv.setViewportView(txtaCamposInv);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -213,6 +197,23 @@ public class GUIregister extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(28, 34, 28, 34);
         pnlFormulario.add(sclpCamposInv, gridBagConstraints);
+
+        txtfNombre.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
+        txtfNombre.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "*Nombre", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 0, 12))); // NOI18N
+        txtfNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtfNombreActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 0.8;
+        gridBagConstraints.insets = new java.awt.Insets(26, 32, 0, 0);
+        pnlFormulario.add(txtfNombre, gridBagConstraints);
 
         javax.swing.GroupLayout pnlFondoLayout = new javax.swing.GroupLayout(pnlFondo);
         pnlFondo.setLayout(pnlFondoLayout);
@@ -247,9 +248,9 @@ public class GUIregister extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtfNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfNombreActionPerformed
+    private void txtfPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfPaisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtfNombreActionPerformed
+    }//GEN-LAST:event_txtfPaisActionPerformed
 
     private void lbYatienesCuentaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbYatienesCuentaMouseEntered
         lbYatienesCuenta.setFont(new java.awt.Font("Segoe UI Semilight", 1, 12));
@@ -258,6 +259,10 @@ public class GUIregister extends javax.swing.JFrame {
     private void lbYatienesCuentaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbYatienesCuentaMouseExited
         lbYatienesCuenta.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12));
     }//GEN-LAST:event_lbYatienesCuentaMouseExited
+
+    private void txtfNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtfNombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -297,7 +302,6 @@ public class GUIregister extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrar;
-    private javax.swing.JComboBox<String> cmbPaises;
     private javax.swing.JLabel lbEasyConference;
     private javax.swing.JLabel lbYatienesCuenta;
     private javax.swing.JPanel pnlFondo;
@@ -311,5 +315,6 @@ public class GUIregister extends javax.swing.JFrame {
     private javax.swing.JTextField txtfCorreo;
     private javax.swing.JTextField txtfNombre;
     private javax.swing.JTextField txtfOrganizacion;
+    private javax.swing.JTextField txtfPais;
     // End of variables declaration//GEN-END:variables
 }

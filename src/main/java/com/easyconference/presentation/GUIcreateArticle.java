@@ -50,6 +50,7 @@ public class GUIcreateArticle extends javax.swing.JInternalFrame {
         sclpAutores = new javax.swing.JScrollPane();
         txtaResumen = new javax.swing.JTextArea();
         txtfPalabrasClaves = new javax.swing.JTextField();
+        pnlFondoAutores = new javax.swing.JPanel();
         scrlpAutores = new javax.swing.JScrollPane();
         pnlAutores = new javax.swing.JPanel();
         lbAgregarAutor = new javax.swing.JLabel();
@@ -69,9 +70,8 @@ public class GUIcreateArticle extends javax.swing.JInternalFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(24, 31, 0, 0);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 20, 0, 0);
         getContentPane().add(lbCrearArticulo, gridBagConstraints);
 
         pnlInfoGeneral.setBackground(new java.awt.Color(255, 255, 255));
@@ -99,7 +99,7 @@ public class GUIcreateArticle extends javax.swing.JInternalFrame {
                     .addGroup(pnlInfoGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(txtfTitulo, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(sclpAutores, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         pnlInfoGeneralLayout.setVerticalGroup(
             pnlInfoGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,32 +117,33 @@ public class GUIcreateArticle extends javax.swing.JInternalFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 20;
-        gridBagConstraints.ipady = 53;
+        gridBagConstraints.ipadx = 19;
+        gridBagConstraints.ipady = 115;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(18, 31, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(29, 20, 0, 0);
         getContentPane().add(pnlInfoGeneral, gridBagConstraints);
 
+        pnlFondoAutores.setBackground(new java.awt.Color(229, 229, 229));
+        pnlFondoAutores.setLayout(new java.awt.GridBagLayout());
+
         scrlpAutores.setBackground(new java.awt.Color(255, 255, 255));
+        scrlpAutores.setBorder(null);
 
         pnlAutores.setBackground(new java.awt.Color(255, 255, 255));
         pnlAutores.setLayout(new javax.swing.BoxLayout(pnlAutores, javax.swing.BoxLayout.Y_AXIS));
         scrlpAutores.setViewportView(pnlAutores);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        gridBagConstraints.ipadx = 336;
-        gridBagConstraints.ipady = 361;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 338;
+        gridBagConstraints.ipady = 424;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(18, 33, 0, 39);
-        getContentPane().add(scrlpAutores, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(6, 25, 0, 0);
+        pnlFondoAutores.add(scrlpAutores, gridBagConstraints);
 
         lbAgregarAutor.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
         lbAgregarAutor.setText("haga clic aqui para agregar otro autor");
@@ -159,14 +160,13 @@ public class GUIcreateArticle extends javax.swing.JInternalFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHEAST;
-        gridBagConstraints.weightx = 1.1;
-        gridBagConstraints.insets = new java.awt.Insets(9, 57, 9, 41);
-        getContentPane().add(lbAgregarAutor, gridBagConstraints);
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipadx = 145;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(12, 57, 0, 0);
+        pnlFondoAutores.add(lbAgregarAutor, gridBagConstraints);
 
         pnlBtnEnviar.setBackground(new java.awt.Color(255, 255, 255));
         pnlBtnEnviar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
@@ -187,13 +187,23 @@ public class GUIcreateArticle extends javax.swing.JInternalFrame {
         pnlBtnEnviar.add(lbEnviar, java.awt.BorderLayout.CENTER);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 47;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHEAST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 54, 23, 39);
-        getContentPane().add(pnlBtnEnviar, gridBagConstraints);
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = 64;
+        gridBagConstraints.ipady = 30;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 300, 6, 0);
+        pnlFondoAutores.add(pnlBtnEnviar, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 21;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(29, 12, 0, 35);
+        getContentPane().add(pnlFondoAutores, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -235,6 +245,7 @@ public class GUIcreateArticle extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lbEnviar;
     private javax.swing.JPanel pnlAutores;
     private javax.swing.JPanel pnlBtnEnviar;
+    private javax.swing.JPanel pnlFondoAutores;
     private javax.swing.JPanel pnlInfoGeneral;
     private javax.swing.JScrollPane sclpAutores;
     private javax.swing.JScrollPane scrlpAutores;
