@@ -6,11 +6,11 @@ import com.easyconference.gestion_conferencias.Gestion_conferencias;
 import com.easyconference.domain.service.IConferenceService;
 
 
-public class RepositorioConferenciaMemoriaArrayList implements IConferenceService{
+public class RConferenciaMemoriaArrayList implements IConferenceService{
 
     private ArrayList<Gestion_conferencias> listaConferencias;
     
-    public RepositorioConferenciaMemoriaArrayList()
+    public RConferenciaMemoriaArrayList()
     {
         this.listaConferencias= new ArrayList();
     }

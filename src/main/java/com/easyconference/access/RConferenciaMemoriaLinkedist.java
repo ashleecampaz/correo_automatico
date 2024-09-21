@@ -9,11 +9,11 @@ import com.easyconference.domain.service.IConferenceService;
  *
  * @author HSVSTT2
  */
-public class RepositoioConferenciaMemoriaLinkedist implements IConferenceService
+public class RConferenciaMemoriaLinkedist implements IConferenceService
 {
     private LinkedList<Gestion_conferencias> listaConferencias;
     
-    public RepositoioConferenciaMemoriaLinkedist()
+    public RConferenciaMemoriaLinkedist()
     {
         this.listaConferencias= new LinkedList();
     }
