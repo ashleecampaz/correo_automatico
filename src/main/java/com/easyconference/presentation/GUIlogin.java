@@ -4,7 +4,9 @@
  */
 package com.easyconference.presentation;
 
+import com.easyconference.domain.service.UserService;
 import java.awt.Dimension;
+import javax.swing.JOptionPane;
 import javax.swing.SpringLayout;
 
 /**
@@ -16,9 +18,14 @@ public class GUIlogin extends javax.swing.JFrame {
     /**
      * Creates new form login
      */
-   
-    public GUIlogin() {
+    private UserService userService; 
+    
+    public GUIlogin(UserService userService) {
+        this.userService = userService;
+        initComponents();
         
+    }
+    public GUIlogin() {
         initComponents();
         
     }
@@ -109,6 +116,11 @@ public class GUIlogin extends javax.swing.JFrame {
         btnIngresar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
         btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnIngresar.setFocusPainted(false);
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
@@ -210,6 +222,18 @@ public class GUIlogin extends javax.swing.JFrame {
         GUIregister registro = new GUIregister();
         registro.setVisible(true);
     }//GEN-LAST:event_lbNotienesCuentaMouseClicked
+
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        if(userService.login(txtfCorreo.getText(),new String( pswfContrasenia.getPassword()))){
+            this.dispose();
+            GUIcontainer inicio = new GUIcontainer();
+            inicio.setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Contraseña y/o usuario incorrecto", "Información", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
      * @param args the command line arguments
