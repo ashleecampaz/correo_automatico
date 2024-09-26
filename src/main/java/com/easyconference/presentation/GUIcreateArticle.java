@@ -5,7 +5,15 @@
 package com.easyconference.presentation;
 
 
+import com.conference.microkernel.common.entities.Email;
+import com.easyconference.domain.entities.Article;
+import com.easyconference.domain.entities.Article.Author;
+import com.easyconference.domain.entities.Usuario;
+import com.easyconference.domain.service.ArticleService;
+import com.easyconference.domain.service.EmailService;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 /**
@@ -13,7 +21,9 @@ import javax.swing.JPanel;
  * @author Ashlee Campaz
  */
 public class GUIcreateArticle extends javax.swing.JInternalFrame {
-
+     private ArticleService articleService;
+     private EmailService emailService;
+     private Usuario usuario;
     /**
      * Creates new form GUIcreateArticle
      */ 
@@ -27,8 +37,11 @@ public class GUIcreateArticle extends javax.swing.JInternalFrame {
         return pnlAutores;
     }
      
-    public GUIcreateArticle() {
+    public GUIcreateArticle( Usuario us,ArticleService articleService) {
+        this.articleService = articleService;
+        this.usuario = us;
         listadoAutores= new ArrayList<>();
+        emailService = new EmailService();
         initComponents();
         lbAgregarAutorMouseClicked(null);
         lbAgregarAutorMouseClicked(null);
@@ -177,6 +190,9 @@ public class GUIcreateArticle extends javax.swing.JInternalFrame {
         lbEnviar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbEnviar.setText("enviar");
         lbEnviar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbEnviarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lbEnviarMouseEntered(evt);
             }
@@ -231,6 +247,31 @@ public class GUIcreateArticle extends javax.swing.JInternalFrame {
     private void lbEnviarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbEnviarMouseExited
        lbEnviar.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
     }//GEN-LAST:event_lbEnviarMouseExited
+
+    private void lbEnviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbEnviarMouseClicked
+       String titulo=  txtfTitulo.getText();
+       String resumen = txtaResumen.getText();
+       String palabras_clave [] = txtfPalabrasClaves.getText().split(",");
+       ArrayList<Author> autores = new ArrayList();
+       ArrayList<String> correos = new  ArrayList();
+       for (pnlAutor p:listadoAutores){
+           Article.Author autor = new Author(p.getTxtfNombre().getText(),
+                   p.getTxtfApellido().getText(),p.getTxtfCorreo().getText()); 
+           autores.add(autor);
+           correos.add(autor.getEmail());
+       }
+       boolean bandera = articleService.subirArticulo(new Article(titulo,resumen,palabras_clave,autores));
+       if(bandera){
+           
+           Email e = new Email("Ariticulo recibido",correos,"easy.conference.prueba@gmail.com","gracias por enviar tu articulo :3");
+           e.setMethod("sjm");
+           try {
+               emailService.EnviarEmail(e);
+           } catch (Exception ex) {
+               Logger.getLogger(GUIcreateArticle.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       }
+    }//GEN-LAST:event_lbEnviarMouseClicked
 
     public void actualizarListadoAutores(){
         int i=1;

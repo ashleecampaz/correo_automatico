@@ -5,6 +5,7 @@
 package com.easyconference.presentation;
 
 import com.easyconference.domain.entities.Usuario;
+import com.easyconference.domain.service.ArticleService;
 import com.easyconference.domain.service.ConferenceService;
 import java.beans.PropertyVetoException;
 import java.util.logging.Level;
@@ -18,12 +19,14 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 public class GUIcontainer extends javax.swing.JFrame {
     private Usuario usuario;
     private ConferenceService conferenceService; 
+    private  ArticleService articleService;
     /**
      * Creates new form GUIcontainer
      */
-    public GUIcontainer(Usuario us, ConferenceService con) {
+    public GUIcontainer(Usuario us, ConferenceService con,  ArticleService art) {
         this.usuario = us;
         this.conferenceService = con; 
+        this.articleService = art;
         initComponents();
         
     }
@@ -215,17 +218,17 @@ public class GUIcontainer extends javax.swing.JFrame {
 
     private void lbCrearConMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbCrearConMouseClicked
         GUIcreateConference crearConferencia = new GUIcreateConference();
-        GUIcreateArticle crearAriticulo = new GUIcreateArticle();
+        GUIcreateArticle crearArticulo = new GUIcreateArticle(usuario,articleService);
         try {
             //crearConferencia.setMaximum(true);
-            crearAriticulo.setMaximum(true);
+            crearArticulo.setMaximum(true);
         } catch (PropertyVetoException ex) {
             Logger.getLogger(GUIcontainer.class.getName()).log(Level.SEVERE, null, ex);
         }
-        dskpaneContenedor.add(crearAriticulo, java.awt.BorderLayout.CENTER);
+        dskpaneContenedor.add(crearArticulo, java.awt.BorderLayout.CENTER);
         //dskpaneContenedor.add(crearConferencia, java.awt.BorderLayout.CENTER);
         intfInicio.setVisible(false);
-        crearAriticulo.setVisible(true);
+        crearArticulo.setVisible(true);
         //crearConferencia.setVisible(true);
         
     }//GEN-LAST:event_lbCrearConMouseClicked

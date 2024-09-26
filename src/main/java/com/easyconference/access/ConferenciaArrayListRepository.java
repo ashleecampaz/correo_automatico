@@ -1,14 +1,16 @@
 package com.easyconference.access;
 
+import com.easyconference.domain.entities.Article;
 import com.easyconference.domain.service.IConferenceService;
 import com.easyconference.domain.entities.Conference;
 import com.easyconference.domain.entities.Usuario;
+import com.easyconference.domain.service.IArticleService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
 
-public class ConferenciaArrayListRepository implements IConferenceService, IUserService{
+public class ConferenciaArrayListRepository implements IConferenceService, IUserService, IArticleService{
 
     private ArrayList<Conference> listConference;
     private List<Usuario> usuarios; 
@@ -99,6 +101,17 @@ public class ConferenciaArrayListRepository implements IConferenceService, IUser
             }
        }
        return null; 
+    }
+
+    @Override
+    public boolean almacenarArticulos(Article objArticle) {
+        return true;
+    }
+
+    @Override
+    public List<Article> listarArticulos() {
+        List<Article> lista = new ArrayList();
+        return lista; 
     }
     
 }
