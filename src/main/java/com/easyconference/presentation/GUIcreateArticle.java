@@ -254,16 +254,24 @@ public class GUIcreateArticle extends javax.swing.JInternalFrame {
        String palabras_clave [] = txtfPalabrasClaves.getText().split(",");
        ArrayList<Author> autores = new ArrayList();
        ArrayList<String> correos = new  ArrayList();
+        ArrayList<String> nombres = new  ArrayList();
        for (pnlAutor p:listadoAutores){
            Article.Author autor = new Author(p.getTxtfNombre().getText(),
                    p.getTxtfApellido().getText(),p.getTxtfCorreo().getText()); 
            autores.add(autor);
            correos.add(autor.getEmail());
+           nombres.add(autor.getName() + " " + autor.getLastname());
        }
        boolean bandera = articleService.subirArticulo(new Article(titulo,resumen,palabras_clave,autores));
        if(bandera){
-           
-           Email e = new Email("Ariticulo recibido",correos,"easy.conference.prueba@gmail.com","gracias por enviar tu articulo :3");
+           String asunto = "Recepcion articulo";
+           String cuerpo = """
+                           Apreciado autores 
+                           Hemos recibido el articulo de manera satisfactoria
+                           Autores:""" + nombres.toString() +"\nTitulo:" + titulo +"\nEl articulo fue enviado por"
+                           + usuario.getName() + " " + usuario.getLastName() +" \n<" + usuario.getEmail() + ">.\n\n"
+                           + "Gracias por enviar un articulo\n\nMejores deseos\neasyConference";
+           Email e = new Email(asunto,correos,"easy.conference.prueba@gmail.com",cuerpo);
            e.setMethod("sjm");
            try {
                emailService.EnviarEmail(e);

@@ -45,14 +45,10 @@ public class GUIcontainer extends javax.swing.JFrame {
         dskpaneContenedor = new javax.swing.JDesktopPane();
         intfInicio = new javax.swing.JInternalFrame();
         lbBienvenido = new javax.swing.JLabel();
-        txtfBusqueda = new javax.swing.JTextField();
-        pnlListadoCon = new javax.swing.JPanel();
-        lbListadoCon = new javax.swing.JLabel();
         pnlListadoAr = new javax.swing.JPanel();
         lbListadoAr = new javax.swing.JLabel();
         pnlBotonCrearCon = new javax.swing.JPanel();
         lbCrearCon = new javax.swing.JLabel();
-        lbBtnBuscar = new javax.swing.JLabel();
         pnlSuperior = new javax.swing.JPanel();
         lbeasyConference = new javax.swing.JLabel();
 
@@ -91,38 +87,6 @@ public class GUIcontainer extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(95, 56, 0, 0);
         intfInicio.getContentPane().add(lbBienvenido, gridBagConstraints);
-
-        txtfBusqueda.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        txtfBusqueda.setText("Buscar conferencia");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 373;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(51, 267, 0, 0);
-        intfInicio.getContentPane().add(txtfBusqueda, gridBagConstraints);
-
-        pnlListadoCon.setBackground(new java.awt.Color(236, 236, 236));
-        pnlListadoCon.setPreferredSize(new java.awt.Dimension(136, 204));
-        pnlListadoCon.setLayout(new java.awt.BorderLayout());
-
-        lbListadoCon.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 14)); // NOI18N
-        lbListadoCon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbListadoCon.setText("Listado de conferencias");
-        lbListadoCon.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(197, 197, 197)));
-        pnlListadoCon.add(lbListadoCon, java.awt.BorderLayout.PAGE_START);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 136;
-        gridBagConstraints.ipady = 204;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(24, 46, 98, 0);
-        intfInicio.getContentPane().add(pnlListadoCon, gridBagConstraints);
 
         pnlListadoAr.setBackground(new java.awt.Color(236, 236, 236));
         pnlListadoAr.setPreferredSize(new java.awt.Dimension(136, 204));
@@ -174,14 +138,6 @@ public class GUIcontainer extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(27, 18, 0, 61);
         intfInicio.getContentPane().add(pnlBotonCrearCon, gridBagConstraints);
-
-        lbBtnBuscar.setText("buscar");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(57, 6, 0, 0);
-        intfInicio.getContentPane().add(lbBtnBuscar, gridBagConstraints);
 
         dskpaneContenedor.add(intfInicio, java.awt.BorderLayout.CENTER);
         //getContentPane().add(intfInicio, java.awt.BorderLayout.CENTER);
@@ -239,16 +195,12 @@ public class GUIcontainer extends javax.swing.JFrame {
     private javax.swing.JDesktopPane dskpaneContenedor;
     private javax.swing.JInternalFrame intfInicio;
     private javax.swing.JLabel lbBienvenido;
-    private javax.swing.JLabel lbBtnBuscar;
     private javax.swing.JLabel lbCrearCon;
     private javax.swing.JLabel lbListadoAr;
-    private javax.swing.JLabel lbListadoCon;
     private javax.swing.JLabel lbeasyConference;
     private javax.swing.JPanel pnlBotonCrearCon;
     private javax.swing.JPanel pnlFondo;
     private javax.swing.JPanel pnlListadoAr;
-    private javax.swing.JPanel pnlListadoCon;
     private javax.swing.JPanel pnlSuperior;
-    private javax.swing.JTextField txtfBusqueda;
     // End of variables declaration//GEN-END:variables
 }
