@@ -35,7 +35,7 @@ public class GUIregister extends javax.swing.JFrame {
     private void setupEventListeners() {
         btnRegistrar.addActionListener(e -> handleRegistration());
         // Añadir un nuevo botón para imprimir usuarios (si no existe, créalo en el diseño)
-        btnImprimirUsuarios.addActionListener(e -> btnImprimirUsuariosActionPerformed(null)); 
+       
     }
     
     private void handleRegistration() {
@@ -102,7 +102,6 @@ public class GUIregister extends javax.swing.JFrame {
         lbYatienesCuenta = new javax.swing.JLabel();
         sclpCamposInv = new javax.swing.JScrollPane();
         txtaCamposInv = new javax.swing.JTextArea();
-        btnImprimirUsuarios = new javax.swing.JButton();
         txtfApellido = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -262,14 +261,6 @@ public class GUIregister extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(28, 34, 28, 34);
         pnlFormulario.add(sclpCamposInv, gridBagConstraints);
 
-        btnImprimirUsuarios.setText("ImprimirUsuarios");
-        btnImprimirUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnImprimirUsuariosActionPerformed(evt);
-            }
-        });
-        pnlFormulario.add(btnImprimirUsuarios, new java.awt.GridBagConstraints());
-
         txtfApellido.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         txtfApellido.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "*Apellido", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 0, 12))); // NOI18N
         txtfApellido.addActionListener(new java.awt.event.ActionListener() {
@@ -352,28 +343,12 @@ public class GUIregister extends javax.swing.JFrame {
         txtaCamposInv.requestFocus();
     }//GEN-LAST:event_txtfOrganizacionActionPerformed
 
-    private void btnImprimirUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirUsuariosActionPerformed
-        // TODO add your handling code here:
-        //List<Usuario> users = repository.listUsuario();
-        System.out.println("Usuarios registrados:");
-       /** for (Usuario user : users) {
-            System.out.println("Nombre: " + user.getName() + " " + user.getLastName());
-            System.out.println("Email: " + user.getEmail());
-            System.out.println("País: " + user.getCountry());
-            System.out.println("Organización: " + user.getOrganization());
-            System.out.println("Campos de investigación: " + user.getIfields());
-            System.out.println("--------------------");
-        }
-        */
-    }//GEN-LAST:event_btnImprimirUsuariosActionPerformed
-
     private void txtfApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfApellido1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfApellido1ActionPerformed
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnImprimirUsuarios;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JLabel lbEasyConference;
     private javax.swing.JLabel lbYatienesCuenta;

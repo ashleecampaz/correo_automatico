@@ -85,6 +85,11 @@ public class GUIlogin extends javax.swing.JFrame {
         txtfCorreo.setForeground(new java.awt.Color(102, 102, 102));
         txtfCorreo.setText("Ingrese su correo");
         txtfCorreo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Correo electronico", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 0, 12))); // NOI18N
+        txtfCorreo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtfCorreoMouseClicked(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -95,9 +100,14 @@ public class GUIlogin extends javax.swing.JFrame {
 
         pswfContrasenia.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         pswfContrasenia.setForeground(new java.awt.Color(102, 102, 102));
-        pswfContrasenia.setText("jPasswordField1");
+        pswfContrasenia.setText(".......");
         pswfContrasenia.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Contraseña", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 0, 12))); // NOI18N
         pswfContrasenia.setCaretColor(new java.awt.Color(102, 102, 102));
+        pswfContrasenia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pswfContraseniaMouseClicked(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -243,6 +253,18 @@ public class GUIlogin extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnIngresarActionPerformed
+
+    private void txtfCorreoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtfCorreoMouseClicked
+        if(txtfCorreo.getText().equals("Ingrese su correo")){
+            txtfCorreo.setText("");
+        }
+    }//GEN-LAST:event_txtfCorreoMouseClicked
+
+    private void pswfContraseniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pswfContraseniaMouseClicked
+       if(String.valueOf(pswfContrasenia.getPassword()).equals(".......")){
+           pswfContrasenia.setText("");
+       }
+    }//GEN-LAST:event_pswfContraseniaMouseClicked
 
     
 

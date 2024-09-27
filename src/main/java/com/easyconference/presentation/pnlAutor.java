@@ -158,7 +158,11 @@ public pnlAutor() {
         lbEliminar.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
     }//GEN-LAST:event_lbEliminarMouseExited
 
-
+    public void cleanFields(){
+        txtfNombre.setText("");
+        txtfApellido.setText("");
+        txtfCorreo.setText("");
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel lbAutor;
     private javax.swing.JLabel lbEliminar;

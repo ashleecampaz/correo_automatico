@@ -14,6 +14,7 @@ import com.easyconference.domain.service.EmailService;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -264,6 +265,8 @@ public class GUIcreateArticle extends javax.swing.JInternalFrame {
        }
        boolean bandera = articleService.subirArticulo(new Article(titulo,resumen,palabras_clave,autores));
        if(bandera){
+           JOptionPane.showMessageDialog(null, "El articulo se envio correctamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+           cleanFiels();
            String asunto = "Recepcion articulo";
            String cuerpo = """
                            Apreciado autores 
@@ -278,6 +281,8 @@ public class GUIcreateArticle extends javax.swing.JInternalFrame {
            } catch (Exception ex) {
                Logger.getLogger(GUIcreateArticle.class.getName()).log(Level.SEVERE, null, ex);
            }
+           
+           
        }
     }//GEN-LAST:event_lbEnviarMouseClicked
 
@@ -286,6 +291,16 @@ public class GUIcreateArticle extends javax.swing.JInternalFrame {
         for(pnlAutor autor: listadoAutores){
             autor.getLbAutor().setText("Autor " + i );
             i++;
+        }
+    }
+    
+    public void cleanFiels(){
+        txtfTitulo.setText("");
+        txtaResumen.setText("");
+        txtfPalabrasClaves.setText("");
+        
+        for (pnlAutor p:listadoAutores){
+            p.cleanFields();
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

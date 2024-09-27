@@ -7,6 +7,8 @@ package com.easyconference.presentation;
 import com.easyconference.domain.entities.Usuario;
 import com.easyconference.domain.service.ArticleService;
 import com.easyconference.domain.service.ConferenceService;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,6 +22,7 @@ public class GUIcontainer extends javax.swing.JFrame {
     private Usuario usuario;
     private ConferenceService conferenceService; 
     private  ArticleService articleService;
+    
     /**
      * Creates new form GUIcontainer
      */
@@ -30,6 +33,8 @@ public class GUIcontainer extends javax.swing.JFrame {
         initComponents();
         
     }
+    
+    public GUIcontainer(){}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,8 +52,8 @@ public class GUIcontainer extends javax.swing.JFrame {
         lbBienvenido = new javax.swing.JLabel();
         pnlListadoAr = new javax.swing.JPanel();
         lbListadoAr = new javax.swing.JLabel();
-        pnlBotonCrearCon = new javax.swing.JPanel();
-        lbCrearCon = new javax.swing.JLabel();
+        pnlBotonSubirArt = new javax.swing.JPanel();
+        lbSubirArticulo = new javax.swing.JLabel();
         pnlSuperior = new javax.swing.JPanel();
         lbeasyConference = new javax.swing.JLabel();
 
@@ -108,26 +113,26 @@ public class GUIcontainer extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(24, 22, 98, 0);
         intfInicio.getContentPane().add(pnlListadoAr, gridBagConstraints);
 
-        pnlBotonCrearCon.setBackground(new java.awt.Color(129, 218, 199));
-        pnlBotonCrearCon.setLayout(new java.awt.BorderLayout());
+        pnlBotonSubirArt.setBackground(new java.awt.Color(129, 218, 199));
+        pnlBotonSubirArt.setLayout(new java.awt.BorderLayout());
 
-        lbCrearCon.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        lbCrearCon.setForeground(new java.awt.Color(255, 255, 255));
-        lbCrearCon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbCrearCon.setText("Crear conferencia");
-        lbCrearCon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lbCrearCon.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbSubirArticulo.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        lbSubirArticulo.setForeground(new java.awt.Color(255, 255, 255));
+        lbSubirArticulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbSubirArticulo.setText("Subir articulo");
+        lbSubirArticulo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lbSubirArticulo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbCrearConMouseClicked(evt);
+                lbSubirArticuloMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lbCrearConMouseEntered(evt);
+                lbSubirArticuloMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                lbCrearConMouseExited(evt);
+                lbSubirArticuloMouseExited(evt);
             }
         });
-        pnlBotonCrearCon.add(lbCrearCon, java.awt.BorderLayout.CENTER);
+        pnlBotonSubirArt.add(lbSubirArticulo, java.awt.BorderLayout.CENTER);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -137,7 +142,7 @@ public class GUIcontainer extends javax.swing.JFrame {
         gridBagConstraints.ipady = 72;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(27, 18, 0, 61);
-        intfInicio.getContentPane().add(pnlBotonCrearCon, gridBagConstraints);
+        intfInicio.getContentPane().add(pnlBotonSubirArt, gridBagConstraints);
 
         dskpaneContenedor.add(intfInicio, java.awt.BorderLayout.CENTER);
         //getContentPane().add(intfInicio, java.awt.BorderLayout.CENTER);
@@ -162,43 +167,55 @@ public class GUIcontainer extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lbCrearConMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbCrearConMouseEntered
+    private void lbSubirArticuloMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbSubirArticuloMouseEntered
         // TODO add your handling code here:
-        lbCrearCon.setFont(new java.awt.Font("Segoe UI Semibold", 1, 15));
-    }//GEN-LAST:event_lbCrearConMouseEntered
+        lbSubirArticulo.setFont(new java.awt.Font("Segoe UI Semibold", 1, 15));
+    }//GEN-LAST:event_lbSubirArticuloMouseEntered
 
-    private void lbCrearConMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbCrearConMouseExited
+    private void lbSubirArticuloMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbSubirArticuloMouseExited
         // TODO add your handling code here:
-        lbCrearCon.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14));
-    }//GEN-LAST:event_lbCrearConMouseExited
+        lbSubirArticulo.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14));
+    }//GEN-LAST:event_lbSubirArticuloMouseExited
 
-    private void lbCrearConMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbCrearConMouseClicked
-        GUIcreateConference crearConferencia = new GUIcreateConference();
+    private void lbSubirArticuloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbSubirArticuloMouseClicked
+         GUIcontainer  contenedorArticulo = new GUIcontainer(usuario,conferenceService,articleService);
+         contenedorArticulo.setDefaultCloseOperation(HIDE_ON_CLOSE);
+         contenedorArticulo.addWindowListener(new WindowAdapter() {
+
+             @Override
+             public void windowClosing(WindowEvent e) {
+               pnlBotonSubirArt.setVisible(true);
+             }
+
+         });
         GUIcreateArticle crearArticulo = new GUIcreateArticle(usuario,articleService);
         try {
-            //crearConferencia.setMaximum(true);
+
             crearArticulo.setMaximum(true);
         } catch (PropertyVetoException ex) {
             Logger.getLogger(GUIcontainer.class.getName()).log(Level.SEVERE, null, ex);
         }
-        dskpaneContenedor.add(crearArticulo, java.awt.BorderLayout.CENTER);
-        //dskpaneContenedor.add(crearConferencia, java.awt.BorderLayout.CENTER);
-        intfInicio.setVisible(false);
-        crearArticulo.setVisible(true);
-        //crearConferencia.setVisible(true);
-        
-    }//GEN-LAST:event_lbCrearConMouseClicked
+        contenedorArticulo.dskpaneContenedor.add(crearArticulo, java.awt.BorderLayout.CENTER);
 
+        pnlBotonSubirArt.setVisible(false);
+        contenedorArticulo.intfInicio.setVisible(false);
+        crearArticulo.setVisible(true);
+        contenedorArticulo.setVisible(true);
+        
+        
+    }//GEN-LAST:event_lbSubirArticuloMouseClicked
+
+   
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane dskpaneContenedor;
     private javax.swing.JInternalFrame intfInicio;
     private javax.swing.JLabel lbBienvenido;
-    private javax.swing.JLabel lbCrearCon;
     private javax.swing.JLabel lbListadoAr;
+    private javax.swing.JLabel lbSubirArticulo;
     private javax.swing.JLabel lbeasyConference;
-    private javax.swing.JPanel pnlBotonCrearCon;
+    private javax.swing.JPanel pnlBotonSubirArt;
     private javax.swing.JPanel pnlFondo;
     private javax.swing.JPanel pnlListadoAr;
     private javax.swing.JPanel pnlSuperior;
