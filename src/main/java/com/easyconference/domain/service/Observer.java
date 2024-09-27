@@ -1,5 +1,5 @@
 
-package com.easyconference.infra;
+package com.easyconference.domain.service;
 
 /**
  *
