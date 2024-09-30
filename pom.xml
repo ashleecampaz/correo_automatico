@@ -25,14 +25,14 @@
         </dependency>
         <dependency>
             <groupId>com.conference</groupId>
-            <artifactId>Microkernel-common</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.conference</groupId>
             <artifactId>Microkernel-SimpleJavaMail-plugin</artifactId>
             <version>1.0.0</version>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.conference</groupId>
+            <artifactId>Microkernel-common</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
     <properties>
