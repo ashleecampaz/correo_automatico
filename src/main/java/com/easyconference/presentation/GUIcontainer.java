@@ -4,31 +4,32 @@
  */
 package com.easyconference.presentation;
 
+import com.easyconference.domain.entities.Article;
 import com.easyconference.domain.entities.Usuario;
 import com.easyconference.domain.service.ArticleService;
-import com.easyconference.domain.service.ConferenceService;
+import com.easyconference.domain.service.Observer;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.beans.PropertyVetoException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
  *
  * @author Ashlee Campaz
  */
-public class GUIcontainer extends javax.swing.JFrame {
+public class GUIcontainer extends javax.swing.JFrame implements Observer{
     private Usuario usuario;
-    private ConferenceService conferenceService; 
     private  ArticleService articleService;
     
     /**
      * Creates new form GUIcontainer
      */
-    public GUIcontainer(Usuario us, ConferenceService con,  ArticleService art) {
+    public GUIcontainer(Usuario us, ArticleService art) {
         this.usuario = us;
-        this.conferenceService = con; 
         this.articleService = art;
         initComponents();
         
@@ -52,6 +53,8 @@ public class GUIcontainer extends javax.swing.JFrame {
         lbBienvenido = new javax.swing.JLabel();
         pnlListadoAr = new javax.swing.JPanel();
         lbListadoAr = new javax.swing.JLabel();
+        scrlpArticulos = new javax.swing.JScrollPane();
+        lstArticulos = new javax.swing.JList<>();
         pnlBotonSubirArt = new javax.swing.JPanel();
         lbSubirArticulo = new javax.swing.JLabel();
         pnlSuperior = new javax.swing.JPanel();
@@ -102,6 +105,10 @@ public class GUIcontainer extends javax.swing.JFrame {
         lbListadoAr.setText("Listado de articulos");
         lbListadoAr.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(197, 197, 197)));
         pnlListadoAr.add(lbListadoAr, java.awt.BorderLayout.PAGE_START);
+
+        scrlpArticulos.setViewportView(lstArticulos);
+
+        pnlListadoAr.add(scrlpArticulos, java.awt.BorderLayout.CENTER);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -178,7 +185,7 @@ public class GUIcontainer extends javax.swing.JFrame {
     }//GEN-LAST:event_lbSubirArticuloMouseExited
 
     private void lbSubirArticuloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbSubirArticuloMouseClicked
-         GUIcontainer  contenedorArticulo = new GUIcontainer(usuario,conferenceService,articleService);
+         GUIcontainer  contenedorArticulo = new GUIcontainer(usuario,articleService);
          contenedorArticulo.setDefaultCloseOperation(HIDE_ON_CLOSE);
          contenedorArticulo.addWindowListener(new WindowAdapter() {
 
@@ -188,6 +195,7 @@ public class GUIcontainer extends javax.swing.JFrame {
              }
 
          });
+         articleService.addObserver(this);
         GUIcreateArticle crearArticulo = new GUIcreateArticle(usuario,articleService);
         try {
 
@@ -215,9 +223,20 @@ public class GUIcontainer extends javax.swing.JFrame {
     private javax.swing.JLabel lbListadoAr;
     private javax.swing.JLabel lbSubirArticulo;
     private javax.swing.JLabel lbeasyConference;
+    private javax.swing.JList<String> lstArticulos;
     private javax.swing.JPanel pnlBotonSubirArt;
     private javax.swing.JPanel pnlFondo;
     private javax.swing.JPanel pnlListadoAr;
     private javax.swing.JPanel pnlSuperior;
+    private javax.swing.JScrollPane scrlpArticulos;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update(Object o) {
+
+        List<Article> list = articleService.listarArticle();
+       DefaultListModel model = new DefaultListModel();
+        lstArticulos.setModel(model);
+        model.addAll(list); 
+    }
 }

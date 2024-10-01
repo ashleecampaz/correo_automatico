@@ -12,6 +12,6 @@ import java.util.List;
  * @author Ashlee Campaz
  */
 public interface IArticleService {
-    public boolean almacenarArticulos(Article objArticle);
+    public void almacenarArticulos(Article objArticle);
     public List<Article> listarArticulos();
 }

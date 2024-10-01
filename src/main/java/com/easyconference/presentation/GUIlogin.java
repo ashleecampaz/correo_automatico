@@ -6,9 +6,7 @@ package com.easyconference.presentation;
 
 import com.easyconference.domain.entities.Usuario;
 import com.easyconference.domain.service.ArticleService;
-import com.easyconference.domain.service.ConferenceService;
 import com.easyconference.domain.service.IArticleService;
-import com.easyconference.domain.service.IConferenceService;
 import com.easyconference.domain.service.UserService;
 import java.awt.Dimension;
 import javax.swing.JOptionPane;
@@ -243,9 +241,8 @@ public class GUIlogin extends javax.swing.JFrame {
         if(us!=null){
             this.dispose();
             
-            ConferenceService conferenceService = new ConferenceService((IConferenceService)userService.getRepository());
             ArticleService articleService = new ArticleService((IArticleService)userService.getRepository());
-            GUIcontainer inicio = new GUIcontainer(us,conferenceService,articleService);
+            GUIcontainer inicio = new GUIcontainer(us,articleService);
             inicio.setVisible(true);
         }
         else{

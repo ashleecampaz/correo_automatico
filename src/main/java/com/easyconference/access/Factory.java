@@ -4,7 +4,6 @@
  */
 package com.easyconference.access;
 
-import com.easyconference.domain.service.IConferenceService;
 
 /**
  *
@@ -32,16 +31,13 @@ public class Factory {
     }
 
     
-    public IConferenceService getRepository(String type) {
+    public IUserService getRepository(String type) {
 
-        IConferenceService result = null;
+        IUserService result = null;
 
         switch (type) {
             case "default":
                 result = new ConferenciaArrayListRepository();
-                break;
-            case "list":
-                result = new ConferenciaLinkedListRepository();
                 break;
         }
         return result;

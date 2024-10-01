@@ -95,5 +95,8 @@ public class Article {
         this.autores = autores;
     }
     
-    
+    @Override
+    public String toString (){
+        return String.format("Titulo: %s ", title);
+    }
 }

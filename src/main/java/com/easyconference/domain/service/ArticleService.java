@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author Ashlee Campaz
  */
-public class ArticleService {
+public class ArticleService extends Subject {
     private IArticleService IarticleService; 
     
     public ArticleService(IArticleService IarticleService ){
@@ -19,8 +19,9 @@ public class ArticleService {
         this.IarticleService = IarticleService;
     }
     
-    public boolean subirArticulo(Article objArticle){
-        return IarticleService.almacenarArticulos(objArticle);
+    public void subirArticulo(Article objArticle){
+        IarticleService.almacenarArticulos(objArticle);
+            this.notifyAllObserves();
     }
     
     public List<Article> listarArticle(){

@@ -263,27 +263,25 @@ public class GUIcreateArticle extends javax.swing.JInternalFrame {
            correos.add(autor.getEmail());
            nombres.add(autor.getName() + " " + autor.getLastname());
        }
-       boolean bandera = articleService.subirArticulo(new Article(titulo,resumen,palabras_clave,autores));
-       if(bandera){
-           JOptionPane.showMessageDialog(null, "El articulo se envio correctamente", "Información", JOptionPane.INFORMATION_MESSAGE);
-           cleanFiels();
-           String asunto = "Recepcion articulo";
-           String cuerpo = """
-                           Apreciado autores 
-                           Hemos recibido el articulo de manera satisfactoria
-                           Autores:""" + nombres.toString() +"\nTitulo:" + titulo +"\nEl articulo fue enviado por"
-                           + usuario.getName() + " " + usuario.getLastName() +" \n<" + usuario.getEmail() + ">.\n\n"
-                           + "Gracias por enviar un articulo\n\nMejores deseos\neasyConference";
-           Email e = new Email(asunto,correos,"easy.conference.prueba@gmail.com",cuerpo);
-           e.setMethod("sjm");
-           try {
-               emailService.EnviarEmail(e);
-           } catch (Exception ex) {
-               Logger.getLogger(GUIcreateArticle.class.getName()).log(Level.SEVERE, null, ex);
-           }
+       articleService.subirArticulo(new Article(titulo,resumen,palabras_clave,autores));
+       
+        JOptionPane.showMessageDialog(null, "El articulo se envio correctamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+        cleanFiels();
+        String asunto = "Recepcion articulo";
+        String cuerpo = """
+                        Apreciado autores 
+                        Hemos recibido el articulo de manera satisfactoria
+                        Autores:""" + nombres.toString() +"\nTitulo:" + titulo +"\nEl articulo fue enviado por"
+                        + usuario.getName() + " " + usuario.getLastName() +" \n<" + usuario.getEmail() + ">.\n\n"
+                        + "Gracias por enviar un articulo\n\nMejores deseos\neasyConference";
+        Email e = new Email(asunto,correos,"easy.conference.prueba@gmail.com",cuerpo);
+        e.setMethod("sjm");
+        try {
+            emailService.EnviarEmail(e);
+        } catch (Exception ex) {
+            Logger.getLogger(GUIcreateArticle.class.getName()).log(Level.SEVERE, null, ex);
+        }
            
-           
-       }
     }//GEN-LAST:event_lbEnviarMouseClicked
 
     public void actualizarListadoAutores(){

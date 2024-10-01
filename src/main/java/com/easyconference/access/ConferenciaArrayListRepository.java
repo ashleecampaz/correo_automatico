@@ -1,7 +1,6 @@
 package com.easyconference.access;
 
 import com.easyconference.domain.entities.Article;
-import com.easyconference.domain.service.IConferenceService;
 import com.easyconference.domain.entities.Conference;
 import com.easyconference.domain.entities.Usuario;
 import com.easyconference.domain.service.IArticleService;
@@ -10,32 +9,18 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 
-public class ConferenciaArrayListRepository implements IConferenceService, IUserService, IArticleService{
+public class ConferenciaArrayListRepository implements  IUserService, IArticleService{
 
     private ArrayList<Conference> listConference;
     private List<Usuario> usuarios; 
-   
+   private List<Article> articulos;
     public ConferenciaArrayListRepository()
     {
         this.listConference= new ArrayList();
         this.usuarios = new ArrayList();
+        this.articulos = new ArrayList();
     }
     
-
-    @Override
-    public boolean storeConference(Conference objConference) {
-        boolean bandera=this.listConference.add(objConference);
-        return bandera;
-    }
-
-    @Override
-    public List<Conference> listConference() {
-        return this.listConference;
-    }
-
-    public List<Usuario> listUsuario() {
-        return this.usuarios;
-    }
 
     // Método para agregar un nuevo usuario
     public boolean agregarUsuario(Usuario usuario) {
@@ -45,9 +30,7 @@ public class ConferenciaArrayListRepository implements IConferenceService, IUser
         usuarios.add(usuario);
         return true;
     }
-    public List<Usuario> usuarios() {
-        return usuarios;
-    }
+   
     // Verificar si un email ya está registrado
     @Override
     public boolean isEmailRegistered(String email) {
@@ -87,7 +70,7 @@ public class ConferenciaArrayListRepository implements IConferenceService, IUser
 
     @Override
     public List<Usuario> obtenerRegistros() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       return usuarios;
     }
     
     @Override
@@ -104,14 +87,13 @@ public class ConferenciaArrayListRepository implements IConferenceService, IUser
     }
 
     @Override
-    public boolean almacenarArticulos(Article objArticle) {
-        return true;
+    public void almacenarArticulos(Article objArticle) {
+        articulos.add(objArticle);
     }
 
     @Override
     public List<Article> listarArticulos() {
-        List<Article> lista = new ArrayList();
-        return lista; 
+        return articulos; 
     }
     
 }

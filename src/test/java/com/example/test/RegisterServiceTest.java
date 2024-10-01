@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import com.easyconference.access.ConferenciaArrayListRepository;
 import com.easyconference.domain.service.UserService;
 
+
 public class RegisterServiceTest {
 
     private UserService registerService;
@@ -25,7 +26,7 @@ public class RegisterServiceTest {
     @Test
     public void testRegistroUsuarioExitoso() {
         String name = "Juan";
-        String lastName = "Pérez";
+        String lastName = "Perez";
         String email = "juan.perez@example.com";
         String password = "password123";
         String country = "Colombia";
@@ -35,7 +36,7 @@ public class RegisterServiceTest {
         boolean resultado = registerService.registerUser(name, lastName, email, password, country, organization, fields);
 
         assertTrue(resultado, "El usuario debería registrarse exitosamente.");
-        assertEquals(1, repository.listUsuario().size(), "Debería haber un usuario registrado.");
+        assertEquals(1, repository.obtenerRegistros().size(), "Debería haber un usuario registrado.");
     }
 
     @Test
@@ -55,7 +56,7 @@ public class RegisterServiceTest {
         boolean resultadoDuplicado = registerService.registerUser(name, lastName, email, password, country, organization, fields);
 
         assertFalse(resultadoDuplicado, "No debería permitirse registrar un usuario con un email duplicado.");
-        assertEquals(1, repository.listUsuario().size(), "Debería haber solo un usuario registrado.");
+        assertEquals(1, repository.obtenerRegistros().size(), "Debería haber solo un usuario registrado.");
     }
 
     @Test
@@ -71,7 +72,7 @@ public class RegisterServiceTest {
         boolean resultado = registerService.registerUser(name, lastName, email, password, country, organization, fields);
 
         assertFalse(resultado, "No debería permitirse registrar un usuario con un nombre inválido.");
-        assertEquals(0, repository.listUsuario().size(), "No debería haber usuarios registrados.");
+        assertEquals(0, repository.obtenerRegistros().size(), "No debería haber usuarios registrados.");
     }
 
     @Test
@@ -87,7 +88,7 @@ public class RegisterServiceTest {
         boolean resultado = registerService.registerUser(name, lastName, email, password, country, organization, fields);
 
         assertFalse(resultado, "No debería permitirse registrar un usuario con un email inválido.");
-        assertEquals(0, repository.listUsuario().size(), "No debería haber usuarios registrados.");
+        assertEquals(0, repository.obtenerRegistros().size(), "No debería haber usuarios registrados.");
     }
 
     @Test
@@ -103,7 +104,7 @@ public class RegisterServiceTest {
         boolean resultado = registerService.registerUser(name, lastName, email, password, country, organization, fields);
 
         assertFalse(resultado, "No debería permitirse registrar un usuario con una contraseña inválida.");
-        assertEquals(0, repository.listUsuario().size(), "No debería haber usuarios registrados.");
+        assertEquals(0, repository.obtenerRegistros().size(), "No debería haber usuarios registrados.");
     }
 
     @Test
@@ -119,6 +120,6 @@ public class RegisterServiceTest {
         boolean resultado = registerService.registerUser(name, lastName, email, password, country, organization, fields);
 
         assertFalse(resultado, "No debería permitirse registrar un usuario con campos faltantes.");
-        assertEquals(0, repository.listUsuario().size(), "No debería haber usuarios registrados.");
+        assertEquals(0, repository.obtenerRegistros().size(), "No debería haber usuarios registrados.");
     }
 }
